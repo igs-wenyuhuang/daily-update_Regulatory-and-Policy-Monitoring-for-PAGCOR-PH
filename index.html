@@ -197,6 +197,35 @@ const KEYWORDS_DEFAULT = ["PIGO","DEGL","Gaming Affiliates","AMLC","PAGCOR licen
 const DATA = {
   "2026-05": [
     {
+      id:"20260529-001",date_added:"2026-05-30",category:"policy",
+      title_zh:"PAGCOR 正式啟動 24 小時問題賭博求助熱線（NPGH），委託 SFO 非政府組織營運",
+      title_en:"PAGCOR Launches 24/7 National Problem Gambling Helpline (NPGH)",
+      doc_number:"PAGCOR NPGH Launch (2026-05-27)",
+      issuing_authority:"PAGCOR",doc_type:"Program Launch",
+      summary:"PAGCOR 於 2026-05-27 正式啟動全國首條 24 小時問題賭博求助熱線（NPGH），委託非政府組織海鷗群組織（SFO）營運，提供心理急救、諮詢轉介及認知行為治療支援；初期 12 名準諮詢師輪班接聽，計劃持續擴編；反映 PAGCOR 分拆監管職能、強化負責任博弈治理的長期策略。",
+      key_changes:[
+        "菲律賓首條 24/7 問題賭博求助熱線正式上線，由受訓準諮詢師輪班接聽",
+        "委託非政府組織 SFO（Seagulls Flock Organization）主責營運，含心理學家、社工及成癮輔導師",
+        "PAGCOR 主席 Tengco 明確宣示此為負責任博弈長期治理策略一環",
+        "熱線於 2026-02 參議院聽證中確認規劃，現已正式啟動，預示後續強制性業者責任要求"
+      ],
+      impact:"對持牌業者：短期無強制性合規要求，但 PAGCOR 可能隨後發布指引要求業者於平台顯示 NPGH 熱線號碼及負責任博弈聲明；對監管環境：此舉強化 PAGCOR 在菲律賓議會的正當性，有助於爭取更多時間推進 PIGO 框架立法，減少議員以社會危害為由施壓禁賭。",
+      suggested_action:"1. 確認現有平台是否已顯示問題賭博警示及聯絡資訊  2. 合規團隊留意後續 PAGCOR 是否發布強制性負責任博弈業者指引  3. 行銷部門評估廣告素材是否需加入熱線資訊",
+      impact_areas:["advertising","licensing"],
+      impact_level:"medium",
+      urgency:"in_force_new",
+      effective_date:"2026-05-27",
+      days_to_effective:-3,
+      badges:["medium_impact","in_force"],
+      confidence:"official",
+      sources:[
+        {name:"PAGCOR 官網公告 (2026-05-27)",url:"https://www.pagcor.ph/headlines/pagcor-launches-247-helpline-for-people-with-gambling-problem.html",type:"primary"},
+        {name:"iGaming Business 報導 (2026-05-29)",url:"https://igamingbusiness.com/sustainable-gambling/pagcor-launches-24-7-national-helpline-problem-gambling/",type:"news"}
+      ],
+      original_quote:{text:"The Philippine Amusement and Gaming Corporation (Pagcor) has officially launched a national gambling helpline dedicated to supporting individuals facing gambling-related problems. This 24-hour service aims to strengthen Pagcor's responsible gaming initiatives by providing immediate and confidential assistance. The helpline, known as the National Problem Gambling Helpline (NPGH), connects callers with trained para-counsellors and mental health professionals. They will offer support such as psychological first aid, guidance, triage and referrals for longer-term treatment if necessary.",section:"iGaming Business 2026-05-29"},
+      keywords_hit:[],heat_score:75
+    },
+    {
       id:"20260528-001",date_added:"2026-05-28",category:"policy",
       title_zh:"BIR 發佈 RMC 57-2026：賭場彩金正式納入預扣稅，20%／25% 稅率即日起適用",
       title_en:"BIR Revenue Memorandum Circular 57-2026: Gambling Jackpot Prizes Confirmed Subject to Final Withholding Tax",
@@ -464,7 +493,7 @@ const ACTIVE_LAWS = [
   ]}
 ];
 
-const TODAY = "2026-05-29";
+const TODAY = "2026-05-30";
 const CURRENT_MONTH = "2026-05";
 
 const CAT_LABEL = {all:"全部",policy:"政策法規",compliance_list:"合規名單",enforcement:"執法動態",signal:"政府風聲"};
@@ -688,77 +717,4 @@ function renderKeywords(){
   list.querySelectorAll(".x").forEach(x=>{
     x.addEventListener("click",()=>{
       state.keywords=state.keywords.filter(kw=>kw!==x.dataset.kw);
-      renderKeywords();render();
-    });
-  });
-}
-
-function updateHeaderMeta(){
-  const today=cardsToday().length;
-  const month=cardsForMonth(CURRENT_MONTH).length;
-  document.getElementById("header-meta").innerHTML=`${TODAY}<span class="dot"></span>今日新增 ${today} 條<span class="dot"></span>本月累計 ${month} 條`;
-}
-
-function render(){
-  document.querySelectorAll("nav.tabs .tab").forEach(t=>t.classList.toggle("active",t.dataset.tab===state.tab));
-  document.querySelectorAll(".cat-btn").forEach(t=>t.classList.toggle("active",t.dataset.cat===state.category));
-  if(state.tab==="today")renderTodayTab();
-  else if(state.tab==="monthly")renderMonthlyTab();
-  else if(state.tab==="search")renderSearchTab();
-  else if(state.tab==="index")renderIndexTab();
-}
-
-document.addEventListener("click",e=>{
-  const t=e.target.closest("[data-action]");
-  if(t){
-    if(t.dataset.action==="toggle"){
-      const id=t.dataset.id;
-      if(state.expanded.has(id))state.expanded.delete(id);
-      else state.expanded.add(id);
-      render();
-    }else if(t.dataset.action==="copy"){
-      const id=t.dataset.id;
-      const c=allCards().find(x=>x.id===id);
-      if(!c)return;
-      const text=`${c.title_zh}\n${c.title_en}\n${c.doc_number}\n\n[摘要] ${c.summary}\n\n[關鍵變更]\n- ${c.key_changes.join("\n- ")}\n\n[業務影響]\n${c.impact}\n\n[建議行動]\n${c.suggested_action}\n\n${c.original_quote?"[原文引用]\n"+c.original_quote.text+"\n— "+c.original_quote.section+"\n\n":""}[來源]\n${c.sources.map(s=>s.name+" · "+s.url).join("\n")}`;
-      navigator.clipboard.writeText(text).then(()=>showToast("已複製整張卡片內容到剪貼簿"));
-    }
-  }
-});
-
-document.querySelectorAll("nav.tabs .tab").forEach(t=>{
-  t.addEventListener("click",()=>{state.tab=t.dataset.tab;render()});
-});
-document.querySelectorAll(".cat-btn").forEach(t=>{
-  t.addEventListener("click",()=>{state.category=t.dataset.cat;render()});
-});
-document.getElementById("f-high").addEventListener("change",e=>{state.highOnly=e.target.checked;render()});
-document.getElementById("f-soon").addEventListener("change",e=>{state.soonOnly=e.target.checked;render()});
-document.getElementById("f-unverified").addEventListener("change",e=>{state.showUnverified=e.target.checked;render()});
-document.getElementById("kw-add-btn").addEventListener("click",()=>{
-  const v=prompt("新增關鍵字（命中時提高排序）：");
-  if(v&&v.trim()){state.keywords.push(v.trim());renderKeywords();render()}
-});
-document.getElementById("refresh-btn").addEventListener("click",()=>{
-  document.getElementById("refresh-modal").classList.add("show");
-});
-
-function closeModal(){document.getElementById("refresh-modal").classList.remove("show")}
-function copyCmd(){
-  navigator.clipboard.writeText(document.getElementById("refresh-cmd").textContent).then(()=>{
-    showToast("已複製指令，請貼到 Cowork 對話");
-    closeModal();
-  });
-}
-function showToast(msg){
-  const t=document.getElementById("toast");
-  t.textContent=msg;t.classList.add("show");
-  setTimeout(()=>t.classList.remove("show"),2000);
-}
-
-updateHeaderMeta();
-renderKeywords();
-render();
-</script>
-</body>
-</html>
+      renderKeywords();render(
