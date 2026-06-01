@@ -195,6 +195,61 @@ mark{background:#FFE9A8;color:var(--text);padding:0 2px;border-radius:2px}
 const KEYWORDS_DEFAULT = ["PIGO","DEGL","Gaming Affiliates","AMLC","PAGCOR license","Support Providers","accreditation","beneficial ownership","9G visa","GGR tax","STR","KYC","Junket","Service Provider","BIR ruling","Revenue Memorandum Circular","raid","closure order","revocation","SWP"];
 
 const DATA = {
+  "2026-06": [
+    {
+      id:"20260601-001",date_added:"2026-06-01",category:"policy",
+      title_zh:"⚠️ 今日截止：B2B 既有分銷協議須向 PAGCOR 申報，逾期協議即刻失效",
+      title_en:"PAGCOR June 1 Deadline: All Existing Distributorship Agreements Must Be Declared (Undeclared = Void)",
+      doc_number:"PAGCOR Board Resolution 2026-03-26（Regulatory Framework for Accreditation of Gaming Affiliates & SSPs, Revision No. 1）",
+      issuing_authority:"PAGCOR",doc_type:"Compliance Deadline",
+      summary:"依 PAGCOR 2026-03-26 董事會決議（Regulatory Framework Revision No. 1），所有現行 B2B 獨家分銷協議須於今日（2026-06-01）前向 PAGCOR 正式申報；未申報之協議自動失效。此截止日為 B2B Accreditation 三階段合規時程中的第二節點（第一節點：2026-05-31 申請提交截止；第三節點：2026-07-31 全面合規截止）。",
+      key_changes:[
+        "2026-06-01 為既有分銷協議申報截止日——逾期未申報即視為無效",
+        "適用對象：所有持有外國 GA/GCP 獨家分銷權之本地 GA 或 GCP",
+        "GSA 被禁止擔任任何外國 GA/GCP 之分銷商或轉售商",
+        "單一本地 GA/GCP 最多可持有同一牌照類別下 5 份獨家分銷協議",
+        "此申報義務源自同一 3/26 決議，與 MGF 延後（另見 20260326-001）並列"
+      ],
+      impact:"任何尚未向 PAGCOR 申報既有分銷協議的 B2B 供應商或本地 GA，今日起協議即失效，等同喪失在菲律賓市場的合法分銷資格；需立即確認申報狀態。",
+      suggested_action:"1. 立即確認所有現行分銷協議是否已向 PAGCOR EGLD 正式申報  2. 未申報者今日前補辦；如無法在今日完成，評估業務暫停風險  3. 法務記錄申報提交時間戳以備查核  4. 對接下來的 7/31 全面合規截止做準備（參見 20260521-001）",
+      impact_areas:["licensing","cross_border"],impact_level:"high",urgency:"in_force_new",
+      effective_date:"2026-06-01",days_to_effective:0,
+      badges:["high_impact","in_force_new"],confidence:"mainstream_media",
+      sources:[
+        {name:"Arden Consult 法規摘要（2026-03-31）",url:"https://www.ardenconsult.org/insights-and-articles/pagcor-issues-two-regulatory-updates-affecting-the-philippine-gaming-industry----march-2026",type:"news"},
+        {name:"IAG — PAGCOR B2B Accreditation July 31 Deadline（2026-05-24）",url:"https://asgam.com/2026/05/24/pagcor-clarifies-online-b2b-accreditation-pathway-as-firm-31-july-deadline-set-for-supplier-compliance/",type:"news"}
+      ],
+      original_quote:{text:"June 1, 2026 — All existing distributorship agreements must be declared to PAGCOR. Undeclared agreements will be void.",section:"Arden Consult，PAGCOR Regulatory Framework Revision No. 1 摘要（March 26, 2026 Board Resolution）"},
+      keywords_hit:["PAGCOR license","accreditation","Gaming Affiliates","Service Provider"],heat_score:80
+    },
+    {
+      id:"20260423-001",date_added:"2026-06-01",category:"policy",
+      title_zh:"PAGCOR 發布直播串流服務供應商（DSP）牌照框架（OGLD-RF26002），向境外授權業者提供直播賭場內容",
+      title_en:"PAGCOR Issues Accreditation Framework for Data Streaming Providers (OGLD-RF26002, eff. Apr 23)",
+      doc_number:"OGLD-RF26002, Rev. 0（2026-04-23）",
+      issuing_authority:"PAGCOR / Offshore Gaming Licensing Department (OGLD)",doc_type:"Regulatory Framework",
+      summary:"PAGCOR OGLD 於 2026-04-23 發布《直播串流服務供應商認可框架》（OGLD-RF26002），為菲律賓境內設立實體直播賭場工作室、專向境外持牌博彩業者提供串流內容的公司建立唯一合法牌照途徑。框架分 Class 1（單一客戶，年費 USD 10 萬）與 Class 2（最多 5-10 家境外業者，每家每年 USD 5 萬）；全數要求 90% 菲律賓籍員工、AMLC 登記及 PAGCOR 全程監管；未持牌即運營屬可制裁違規。",
+      key_changes:[
+        "新設 DSP 牌照類別（OGLD 主管），為菲律賓直播賭場工作室向境外授權業者串流的唯一合法框架",
+        "Class 1（單一客戶 DSP）：服務 1 家境外持牌業者，年申請及續牌費 USD 100,000",
+        "Class 2（第三方 DSP）：服務最多 5 家（經 OGLD 審核可擴至 10 家）境外持牌業者，每家每年 USD 50,000；最低須簽約 2 家否則罰款 USD 50,000/年",
+        "強制 90% 菲律賓籍員工（含管理、監督、一般職位全層級）",
+        "申請須包含：SEC 登記資本 ≥ PHP 1,000 萬、繳足資本 ≥ PHP 200 萬、PAGCOR 誠信審查、遊戲獨立測試認證、AMLC 登記",
+        "境外業者資質亦納入審查——合作業者來自可疑司法管轄區將影響申請結果",
+        "未取得「開始營運許可（Notice to Commence Operations）」即進行任何設備採購或運營屬制裁違規"
+      ],
+      impact:"對有意在菲律賓設立直播賭場工作室向境外業者串流的業者（如 Live dealer studio），此框架為唯一合法途徑；已設立者須立即評估是否需補辦牌照。與 SCBPO 模型並列，不涉及本地玩家押注，稅務定位有別於 PIGO。",
+      suggested_action:"1. 評估現有或計劃中的直播工作室業務是否符合 DSP 定義  2. 確認合作境外業者持牌狀態及司法管轄區適格性  3. 選擇 Class 1 或 Class 2 並計算費用影響  4. 啟動 SEC 登記資本合規及 AMLC 登記流程  5. 勿在取得 Notice to Commence Operations 前採購設備或開始串流",
+      impact_areas:["licensing","cross_border","aml"],impact_level:"medium",urgency:"in_force_new",
+      effective_date:"2026-04-23",days_to_effective:-39,
+      badges:["medium_impact","in_force_new"],confidence:"mainstream_media",
+      sources:[
+        {name:"Arden Consult 詳解（2026-05-01）",url:"https://www.ardenconsult.org/insights-and-articles/pagcor-releases-accreditation-framework-for-data-streaming-providers",type:"news"}
+      ],
+      original_quote:{text:"PAGCOR's Offshore Gaming Licensing Department (OGLD) has issued the Accreditation Framework for Data Streaming Providers (DSPs), effective 23 April 2026 (OGLD-RF26002, Rev. 0). The framework establishes the regulated pathway for Philippine-based entities that operate live-streaming gaming studios and deliver gameplay feeds to operators licensed in foreign jurisdictions.",section:"Arden Consult, PAGCOR Releases Accreditation Framework for Data Streaming Providers (2026-05-01)"},
+      keywords_hit:["PAGCOR license","accreditation","Gaming Affiliates"],heat_score:72
+    }
+  ],
   "2026-05": [
     {
       id:"20260529-001",date_added:"2026-05-30",category:"policy",
@@ -275,7 +330,7 @@ const DATA = {
     },
     {
       id:"20260326-001",date_added:"2026-05-26",category:"policy",
-      title_zh:"PAGCOR GSA 最低保證費（MGF）延後至 6/1 生效，業者倒數 5 天",
+      title_zh:"PAGCOR GSA 最低保證費（MGF）今日正式生效（2026-06-01），首月計提即開始",
       title_en:"PAGCOR Defers Minimum Guaranteed Fee (MGF) for GSAs to June 1, 2026",
       doc_number:"PAGCOR Board Resolution dated 2026-03-26",
       issuing_authority:"PAGCOR (Electronic Gaming Licensing Department)",doc_type:"Board-approved Memorandum",
@@ -283,9 +338,9 @@ const DATA = {
       key_changes:["MGF 原訂 4/1 起徵，延後 2 個月至 2026-06-01","含電子賭場遊戲 GSA：月 GGR ≥ PHP30M 觸發 MGF PHP9M","不含電子賭場遊戲 GSA：月 GGR ≥ PHP15M 觸發 MGF PHP3M","2026-10-01 起第二階段：MGF 上調至 PHP10.5M / PHP4M，門檻同步上調至 PHP35M / PHP20M","立法目的：解決「短報營收」問題，預期推動市場整合"],
       impact:"對所有 GSA：6/1 起須開始計提 MGF；對中小型 GSA：MGF 可能成為實質「最低稅負」、營運成本上升；預期市場整合，部分次規模業者退出；對大型 GSA：實際 GGR 通常高於門檻，影響有限但合規流程須備齊。",
       suggested_action:"1. 立即核算自身月度 GGR 是否達 MGF 觸發門檻  2. 財務團隊重編 H2 預測模型  3. 對於長期低於門檻者，評估退場、整併或轉型方案  4. 預備 7 月初首次 MGF 申繳作業流程",
-      impact_areas:["taxation","licensing"],impact_level:"high",urgency:"effective_soon",
-      effective_date:"2026-06-01",days_to_effective:5,
-      badges:["high_impact","effective_soon"],confidence:"official",
+      impact_areas:["taxation","licensing"],impact_level:"high",urgency:"in_force_new",
+      effective_date:"2026-06-01",days_to_effective:0,
+      badges:["high_impact","in_force_new"],confidence:"official",
       sources:[
         {name:"GGRAsia 報導：MGF 延後兩個月",url:"https://www.ggrasia.com/pagcor-minimum-fees-system-for-online-gaming-sector-deferred-2-months-amid-economic-crisis",type:"news"},
         {name:"GGRAsia 原始公告報導",url:"https://www.ggrasia.com/new-minimum-guaranteed-fees-to-be-paid-from-april-1-2026-by-all-types-of-gaming-system-administrators-says-pagcor",type:"news"},
@@ -305,7 +360,7 @@ const DATA = {
       impact:"行銷團隊全面重整廣告策略；既有戶外、TV、線上廣告須在 8/15 前完成下架；新廣告須走 ASC 審核流程，預期審核時程拉長；用戶獲取通路被擠壓至 SEO、CRM、聯盟商、口碑等非廣告路徑；對品牌曝光與新客成本造成顯著衝擊。",
       suggested_action:"1. 盤點所有現有廣告位（戶外/TV/線上）並排程 8/15 前下架  2. 行銷預算重配置至非廣告通路（SEO、Affiliates、CRM）  3. 對所有新創意先送 ASC 預審並建立流程 SOP  4. 與 ASC 建立順暢溝通管道，理解審核時程  5. 對既有合約廣告位協調終止條款",
       impact_areas:["advertising"],impact_level:"high",urgency:"effective_later",
-      effective_date:"2026-08-15",days_to_effective:81,
+      effective_date:"2026-08-15",days_to_effective:75,
       badges:["high_impact","effective_soon"],confidence:"official",
       sources:[
         {name:"NEXT.io：PAGCOR 強化 iGaming 規範並研議全面禁廣告",url:"https://next.io/news/regulation/pagcor-toughens-igaming-restrictions-considers-ad-ban/",type:"news"},
@@ -475,13 +530,15 @@ const DATA = {
 const ACTIVE_LAWS = [
   {group:"牌照與框架",items:[
     {title_zh:"PIGO Framework（菲律賓本地線上博彩牌照）",title_en:"PIGO / DEGL Framework",effective_date:"2022 起持續",areas:["licensing"]},
-    {title_zh:"B2B Accreditation Framework",title_en:"Mandatory Accreditation for Affiliates & SSPs",effective_date:"2026-01-01",areas:["licensing","advertising"]}
+    {title_zh:"B2B Accreditation Framework",title_en:"Mandatory Accreditation for Affiliates & SSPs",effective_date:"2026-01-01",areas:["licensing","advertising"]},
+    {title_zh:"DSP 直播串流服務供應商牌照框架（OGLD-RF26002）",title_en:"Accreditation Framework for Data Streaming Providers",effective_date:"2026-04-23",cited_card:"20260423-001",areas:["licensing","cross_border"]}
   ]},
   {group:"稅費與規費",items:[
-    {title_zh:"GSA 最低保證費 MGF（首階段）",title_en:"Minimum Guaranteed Fee for Gaming System Administrators",effective_date:"2026-06-01（即將生效 D-5）",cited_card:"20260326-001",areas:["taxation","licensing"]}
+    {title_zh:"GSA 最低保證費 MGF（首階段）",title_en:"Minimum Guaranteed Fee for Gaming System Administrators",effective_date:"2026-06-01（今日已生效）",cited_card:"20260326-001",areas:["taxation","licensing"]}
   ]},
   {group:"廣告與行銷",items:[
     {title_zh:"PAGCOR Cashback / Rebate 上限",title_en:"E-Gaming Cashback & Rebate Caps",effective_date:"2026-05-07",cited_card:"20260507-001",areas:["advertising","taxation"]},
+    {title_zh:"BIR RMC 57-2026：賭場彩金預扣稅 20%/25%",title_en:"Casino Jackpot Prizes Subject to Final Withholding Tax",effective_date:"2026-05-28",cited_card:"20260528-001",areas:["taxation"]},
     {title_zh:"PAGCOR-ASC 博彩廣告全面下架（即將生效）",title_en:"Total Removal of Gambling Advertisements by Aug 15",effective_date:"2026-08-15",cited_card:"20260506-001",areas:["advertising"]}
   ]},
   {group:"AML / KYC",items:[
@@ -493,8 +550,8 @@ const ACTIVE_LAWS = [
   ]}
 ];
 
-const TODAY = "2026-05-31";
-const CURRENT_MONTH = "2026-05";
+const TODAY = "2026-06-01";
+const CURRENT_MONTH = "2026-06";
 
 const CAT_LABEL = {all:"全部",policy:"政策法規",compliance_list:"合規名單",enforcement:"執法動態",signal:"政府風聲"};
 const CAT_BADGE = {policy:"b-blue",compliance_list:"b-teal",enforcement:"b-pink",signal:"b-gray"};
@@ -598,123 +655,4 @@ function renderCard(c){
     html+=`<div class="detail">`;
     html+=`<div class="detail-section"><div class="ds-label">關鍵變更</div><div class="ds-body"><ul>${c.key_changes.map(k=>`<li>${highlightKW(k)}</li>`).join("")}</ul></div></div>`;
     html+=`<div class="detail-section"><div class="ds-label">業務影響</div><div class="ds-body">${highlightKW(c.impact)}</div></div>`;
-    html+=`<div class="detail-section"><div class="ds-label">建議行動</div><div class="ds-body">${highlightKW(c.suggested_action)}</div></div>`;
-    if(c.original_quote){
-      html+=`<div class="detail-section"><div class="ds-label">原文引用</div><div class="quote">"${escapeHtml(c.original_quote.text)}"<div class="cite">— ${escapeHtml(c.original_quote.section)}</div></div></div>`;
-    }
-    html+=`<div class="detail-section"><div class="ds-label">來源連結</div><div class="sources">${c.sources.map(s=>`<a class="source-link" href="${s.url}" target="_blank" rel="noopener">${escapeHtml(s.name)}<span class="source-type">${s.type}</span> ↗</a>`).join("")}</div></div>`;
-    html+=`<div class="detail-actions">
-      <button class="btn" data-action="copy" data-id="${c.id}">📋 複製全文</button>
-      <button class="btn" data-action="toggle" data-id="${c.id}">▴ 收合</button>
-    </div>`;
-    html+=`</div>`;
-  }
-  html+=`<div class="card-footer"><span>捕獲 ${c.date_added}</span><span>ID: ${c.id}</span></div>`;
-  html+=`</article>`;
-  return html;
-}
-
-function renderCards(arr){
-  const main=document.getElementById("cards");
-  if(!arr.length){
-    main.innerHTML=`<div class="empty">本區塊目前無內容。<br><small>（若您勾選了「僅高影響」「僅即將生效」可試著取消篩選；風聲類預設隱藏，需勾選「含未證實風聲」才顯示）</small></div>`;
-    return;
-  }
-  main.innerHTML=arr.map(renderCard).join("");
-}
-
-function renderTodayTab(){
-  document.getElementById("filters-section").style.display="flex";
-  document.getElementById("kw-section").style.display="flex";
-  document.getElementById("month-selector-wrap").innerHTML="";
-  document.getElementById("search-wrap").innerHTML="";
-  document.getElementById("history-banner-wrap").innerHTML="";
-  const todayAll=cardsToday();
-  let arr=filterCards(todayAll);
-  arr=sortCards(arr);
-  if(!arr.length&&!todayAll.length){
-    document.getElementById("cards").innerHTML=`<div class="empty" style="padding:60px 20px"><div style="font-size:32px;margin-bottom:12px">📭</div><div style="font-size:14px;color:var(--text-2);margin-bottom:6px">今日尚無新增公告</div><div style="font-size:12px;color:var(--text-3);line-height:1.7">工具每日 09:00 PHT 自動掃描 PAGCOR 與相關主管機關。<br>若需手動觸發更新，請點右上「🔄 重整」。<br>本月已累計 ${cardsForMonth(CURRENT_MONTH).length} 條，可切換「月度檢視」查看。</div></div>`;
-    return;
-  }
-  renderCards(arr);
-}
-
-function renderMonthlyTab(){
-  document.getElementById("filters-section").style.display="flex";
-  document.getElementById("kw-section").style.display="flex";
-  const months=Object.keys(DATA).sort().reverse();
-  const sel=`<div class="month-selector"><span style="font-size:13px;color:var(--text-2)">月份：</span><select id="month-sel">${months.map(m=>`<option value="${m}" ${m===state.month?"selected":""}>${m}</option>`).join("")}</select></div>`;
-  document.getElementById("month-selector-wrap").innerHTML=sel;
-  document.getElementById("search-wrap").innerHTML="";
-  document.getElementById("history-banner-wrap").innerHTML=state.month!==CURRENT_MONTH?`<div class="history-banner">⏳ 您正在檢視歷史月份（${state.month}），重整功能已暫停</div>`:"";
-  document.getElementById("refresh-btn").disabled=state.month!==CURRENT_MONTH;
-  document.getElementById("month-sel").addEventListener("change",e=>{state.month=e.target.value;render()});
-  let arr=filterCards(cardsForMonth(state.month));
-  arr=sortCards(arr);
-  renderCards(arr);
-}
-
-function renderSearchTab(){
-  document.getElementById("filters-section").style.display="flex";
-  document.getElementById("kw-section").style.display="flex";
-  document.getElementById("month-selector-wrap").innerHTML="";
-  document.getElementById("history-banner-wrap").innerHTML="";
-  document.getElementById("refresh-btn").disabled=false;
-  document.getElementById("search-wrap").innerHTML=`<div class="search-bar"><input id="search-input" type="search" placeholder="搜尋標題、機關、文件編號、條文⋯" value="${escapeHtml(state.searchQuery)}"></div>`;
-  const inp=document.getElementById("search-input");
-  inp.addEventListener("input",e=>{state.searchQuery=e.target.value;renderSearchResults()});
-  inp.focus();
-  renderSearchResults();
-}
-function renderSearchResults(){
-  if(!state.searchQuery.trim()){
-    document.getElementById("cards").innerHTML=`<div class="empty">輸入關鍵字搜尋所有歷史卡片（標題、機關、文件編號、原文引用、摘要）</div>`;
-    return;
-  }
-  const q=state.searchQuery.toLowerCase();
-  let arr=allCards().filter(c=>{
-    const blob=[c.title_zh,c.title_en,c.doc_number,c.issuing_authority,c.summary,c.impact,(c.original_quote&&c.original_quote.text)||"",...(c.key_changes||[])].join(" ").toLowerCase();
-    return blob.includes(q);
-  });
-  arr=filterCards(arr);
-  arr=sortCards(arr);
-  renderCards(arr);
-}
-
-function renderIndexTab(){
-  document.getElementById("filters-section").style.display="none";
-  document.getElementById("kw-section").style.display="none";
-  document.getElementById("month-selector-wrap").innerHTML="";
-  document.getElementById("search-wrap").innerHTML="";
-  document.getElementById("history-banner-wrap").innerHTML="";
-  document.getElementById("refresh-btn").disabled=false;
-  const main=document.getElementById("cards");
-  let html="";
-  ACTIVE_LAWS.forEach(g=>{
-    html+=`<div class="index-group"><h3>${g.group}</h3><div class="index-list">`;
-    g.items.forEach(it=>{
-      html+=`<div class="index-item" ${it.cited_card?`data-jump="${it.cited_card}"`:""}><div><div class="il-title">${escapeHtml(it.title_zh)}</div><div class="il-sub">${escapeHtml(it.title_en)} · ${it.areas.map(a=>AREA_LABEL[a]||a).join(" · ")}</div></div><div class="il-date">${escapeHtml(it.effective_date)}</div></div>`;
-    });
-    html+=`</div></div>`;
-  });
-  main.innerHTML=html;
-  main.querySelectorAll("[data-jump]").forEach(el=>{
-    el.addEventListener("click",()=>{
-      const id=el.dataset.jump;
-      state.tab="monthly";
-      const m=id.slice(0,4)+"-"+id.slice(4,6);
-      state.month=m;
-      state.expanded.add(id);
-      render();
-      setTimeout(()=>{const c=document.querySelector(`.card[data-id="${id}"]`);if(c)c.scrollIntoView({behavior:"smooth",block:"start"})},100);
-    });
-  });
-}
-
-function renderKeywords(){
-  const list=document.getElementById("kw-list");
-  list.innerHTML=state.keywords.map(k=>`<span class="kw-chip">${escapeHtml(k)}<span class="x" data-kw="${escapeHtml(k)}">×</span></span>`).join(" ");
-  list.querySelectorAll(".x").forEach(x=>{
-    x.addEventListener("click",()=>{
-      state.keywords=state.keywords.filter(kw=>kw!==x.dataset.kw);
-      renderKeywords();render(
+    html+=`<div class="detail-section"><div class="ds-label">建議行動</div><div class="ds-body">${highlight
